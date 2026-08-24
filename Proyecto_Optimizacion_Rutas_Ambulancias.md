@@ -3,7 +3,7 @@
 Documento de lectura sobre el proyecto de optimización de rutas de ambulancias. Resume el problema planteado, los elementos considerados y las restricciones que deberá tener en cuenta el modelo.
 
 **Asignatura:** Toma de Decisiones Organizacionales  
-**Dominio:** Logística y optimización de rutas 
+**Dominio:** Logística y optimización de rutas  
 **Fuente:** Los datos se obtuvieron de Kaggle en el enlace: https://www.kaggle.com/datasets/mchirico/montcoalert/data  
 **Realizado Por:** Juan Esteban Gamba, Jose Gabriel Vega Forero y Sofia Forero Estupiñan
 
