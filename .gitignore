@@ -1,0 +1,8 @@
+# Datasets
+*.csv
+
+# Virtual environment
+tdem/
+
+# archivos de pruebas
+pruebas osmnx.py

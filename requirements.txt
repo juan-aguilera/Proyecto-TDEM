@@ -1,0 +1,11 @@
+pandas
+gdown
+openpyxl
+matplotlib
+seaborn
+plotly
+ipykernel
+osmnx
+networkx
+folium
+scikit-learn
