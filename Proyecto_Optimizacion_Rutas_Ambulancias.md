@@ -33,3 +33,17 @@ El modelo deberá considerar que cada paciente requiere un tiempo específico de
 Adicionalmente, la planificación deberá respetar las condiciones de la jornada laboral. Cada ambulancia iniciará su recorrido a una hora determinada y deberá finalizarlo dentro del horario establecido. Durante la jornada se contará con un máximo de ocho horas efectivas de operación y un período obligatorio de una hora destinado al almuerzo del personal, durante el cual no se realizarán actividades de desplazamiento ni atención a pacientes. Esta pausa deberá ser considerada dentro de la programación, ya que cualquier variación en los tiempos de desplazamiento o atención puede afectar las visitas posteriores y el cumplimiento del horario establecido.
 
 Por lo tanto, el problema consiste en determinar la asignación de pacientes a cada ambulancia y la secuencia óptima en la que deberán ser atendidos, considerando las restricciones de capacidad, los tiempos de desplazamiento, el tiempo de atención de cada paciente y la jornada laboral. De esta manera, el proyecto busca representar un problema realista de ruteo y asignación de recursos, utilizando información geográfica para determinar rutas eficientes que contribuyan a mejorar la utilización de las ambulancias y la planificación de la atención médica.
+
+---
+
+## 3. Metodologia
+
+Para el desarrollo del proyecto se siguió una metodología basada en el análisis de datos y la optimización de rutas, con el propósito de apoyar la toma de decisiones relacionadas con la operación de ambulancias en Montgomery County, Pennsylvania.
+
+Inicialmente, se realizó una revisión y preparación de la base de datos de llamadas de emergencia, con el fin de identificar la información relevante para el desarrollo del modelo. A partir de los registros disponibles, se analizaron los diferentes tipos de emergencias y su comportamiento, lo que permitió identificar los servicios de mayor relevancia para el problema y seleccionar tres de ellos para el análisis. Para cada servicio se determinó su tiempo de atención a partir de información disponible, evitando establecer valores basados en supuestos.
+
+Con el propósito de representar los desplazamientos de manera más cercana a las condiciones reales, se utilizó Python junto con información de la red vial de la zona. A partir de las ubicaciones de los centros médicos y de los puntos de atención, se calcularon las distancias y los tiempos de desplazamiento entre cada par de puntos, construyendo así una matriz de tiempos que sirve como entrada para el modelo de optimización
+
+Finalmente, con la información obtenida se realizó la formulación matemática del problema como un modelo de ruteo de vehículos. El modelo busca determinar la asignación de los pacientes a las ambulancias y la secuencia en la que deben ser atendidos, considerando las restricciones de capacidad, tiempos de atención, desplazamiento, jornada laboral y retorno al centro médico. El objetivo principal es minimizar el costo total de operación de las rutas, buscando al mismo tiempo una utilización eficiente de los recursos disponibles.
+
+La solución obtenida mediante el modelo será posteriormente evaluada a través de los resultados de las rutas y de diferentes escenarios, con el fin de determinar si la propuesta permite mejorar la planificación de la operación de las ambulancias
