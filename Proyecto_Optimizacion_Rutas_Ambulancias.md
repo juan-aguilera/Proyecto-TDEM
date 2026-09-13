@@ -47,3 +47,8 @@ Con el propósito de representar los desplazamientos de manera más cercana a la
 Finalmente, con la información obtenida se realizó la formulación matemática del problema como un modelo de ruteo de vehículos. El modelo busca determinar la asignación de los pacientes a las ambulancias y la secuencia en la que deben ser atendidos, considerando las restricciones de capacidad, tiempos de atención, desplazamiento, jornada laboral y retorno al centro médico. El objetivo principal es minimizar el costo total de operación de las rutas, buscando al mismo tiempo una utilización eficiente de los recursos disponibles.
 
 La solución obtenida mediante el modelo será posteriormente evaluada a través de los resultados de las rutas y de diferentes escenarios, con el fin de determinar si la propuesta permite mejorar la planificación de la operación de las ambulancias
+
+## Formulacion del Problema
+
+ 
+ 
