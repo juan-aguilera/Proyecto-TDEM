@@ -1,8 +1,5 @@
-# Datasets
-*.csv
-
-# Virtual environment
+# Carpetas
 tdem/
-
+NO-SUBIR/
 # archivos de pruebas
-pruebas osmnx.py
+pruebas osmnx.pyS
