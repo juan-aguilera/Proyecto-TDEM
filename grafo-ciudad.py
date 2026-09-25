@@ -27,7 +27,7 @@ def crear_grafo(ciudad = "Montgomery County, Pennsylvania, USA"):
     print(f"Nodos: {G.number_of_nodes():,}")
     print(f"Aristas: {G.number_of_edges():,}")
     return G
-G = crear_grafo()
+
 
 def verificar_grafo(G):
     # Verificar que se asignaron
@@ -38,8 +38,8 @@ def verificar_grafo(G):
     print(f"  Tiempo: {ejemplo[2].get('travel_time', '?'):.1f} seg")
     return G
 
-EXCEL_ANALISIS = Path(__file__).resolve().parent / "analisis.xlsx"
 
+EXCEL_ANALISIS = Path(__file__).resolve().parent / "analisis.xlsx"
 def leer_analisis(
     ruta: Path | str = EXCEL_ANALISIS,
     hoja: str | int = 0,
@@ -50,7 +50,7 @@ def leer_analisis(
     df.insert(0, "Punto", [f"P{i}" for i in range(1, len(df) + 1)])
     return df
 
-df_puntos = leer_analisis()
+
 
 
 def puntos_cercanos_grafo(df_puntos, G = crear_grafo()):
@@ -60,7 +60,7 @@ def puntos_cercanos_grafo(df_puntos, G = crear_grafo()):
     axis=1)
     return df_puntos
 
-df_puntos = puntos_cercanos_grafo(df_puntos, G)
+
 
 
 def matriz_tiempos(df_puntos, G):
@@ -84,13 +84,33 @@ def matriz_tiempos(df_puntos, G):
                 matriz[i][j] = tiempos[nodos_lista[j]] / 60  # a minutos
 
     print(f"Tiempo de cálculo: {time() - inicio:.1f} seg")
+    df_matriz_tiempos=pd.DataFrame(matriz, index=ids, columns=ids).round(2)
+    return df_matriz_tiempos
+    
 
-    df_matriz = pd.DataFrame(matriz, index=ids, columns=ids).round(2)
-    return df_matriz
 
 
-df_matriz = matriz_tiempos(df_puntos, G)
-df_matriz.to_csv("matriz_tiempos_30x30.csv")
+def matriz_distancias(df_puntos, G):
+    ids = df_puntos["Punto"].tolist()
+    nodos_lista = df_puntos["nodo_osm"].tolist()
+    n = len(nodos_lista)
+    matriz = np.full((n, n), np.inf)
+
+    inicio = time()
+
+    for i in range(n):
+        distancias = nx.single_source_dijkstra_path_length(G, nodos_lista[i], weight="length")
+        for j in range(n):
+            if i == j:
+                matriz[i, j] = 0
+            elif nodos_lista[j] in distancias:
+                matriz[i, j] = distancias[nodos_lista[j]] / 1000  # a kilómetros
+    print(f"Tiempo de cálculo: {time() - inicio:.1f} seg")
+
+    df_matriz_distancias = pd.DataFrame(matriz, index=ids, columns=ids).round(2)
+    return df_matriz_distancias
+
+
 
 def mapa_rutas(G, df_puntos, df_matriz, origen="P37"):
     """
@@ -170,6 +190,30 @@ def mapa_rutas(G, df_puntos, df_matriz, origen="P37"):
     
     return m
 
-m = mapa_rutas(G, df_puntos, df_matriz, origen="P37")
+
+# Orden de ejecucion de las funciones:
+
+# Crear grafo para la ciudad de Montgomery County, Pennsylvania, USA
+G = crear_grafo()
+
+# Leer puntos del archivo analisis.xlsx (Puntos: Coordenadas y Descripción previamente seleccionadas. 40 puntos en total incluyendo hospitales,depósitos y pacientes) 
+df_puntos = leer_analisis()
+
+# Asociar cada punto a su nodo más cercano en el grafo
+df_puntos = puntos_cercanos_grafo(df_puntos, G)
+"""
+# Matriz de tiempos entre todos los puntos. La matriz se guarda en el archivo matriz_tiempos_nxn.csv
+df_matriz_tiempos = matriz_tiempos(df_puntos, G)
+df_matriz_tiempos.to_csv("matriz_tiempos_nxn.csv")
+"""
+# Calcular la matriz de distancias entre todos los puntos. La matriz se guarda en el archivo matriz_distancias_nxn.csv
+df_matriz_distancias = matriz_distancias(df_puntos, G)
+df_matriz_distancias.to_csv("matriz_distancias_nxn.csv")
+
+"""
+# Dibujar las rutas en el mapa. La ruta se guarda en el archivo mapa_rutas.html. Se dibuja la ruta desde un origen (ej: P37, que es un hospital) hasta todos los otros puntos.
+m = mapa_rutas(G, df_puntos, df_matriz_tiempos, origen="P37")
 m.save("mapa_rutas.html")
 webbrowser.open("mapa_rutas.html")
+
+"""
