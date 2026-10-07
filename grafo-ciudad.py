@@ -8,6 +8,7 @@ from pathlib import Path
 import pandas as pd
 from time import time
 from collections import defaultdict
+import random
 import folium
 import webbrowser
 
@@ -251,7 +252,7 @@ def _componentes_calles(G):
 
     Una calle no es una sola arista: es la cadena de aristas que comparten
     nombre y se tocan por algún nodo. El mismo nombre puede existir en
-    municipios distintos del condado; si esos tramos no se tocan, salen
+    barrios distintos de la ciudad; si esos tramos no se tocan, salen
     como calles distintas ("Main Street #1", "Main Street #2").
     Las aristas sin nombre se ignoran.
 
@@ -488,58 +489,10 @@ def uso_calles(G, df_puntos, weight="travel_time"):
     return df_uso, df_tiempos, catalogo
 
 
-def _impacto_cierre(tiempos_antes, tiempos_despues):
-    """Compara el tiempo de cada par antes y después de cerrar calles.
 
-    Parametros:
-        tiempos_antes (pandas.DataFrame): matriz de minutos con el grafo original.
-            Index y columnas son los id de punto (P1, P2, ...).
-        tiempos_despues (pandas.DataFrame): la misma matriz sobre el grafo sin las calles cerradas.
-
-    Retorna:
-        pandas.DataFrame: una fila por par ordenado, sin la diagonal.
-            origen (str), destino (str): id de punto.
-            min_antes (float): minutos en el grafo original. inf si ya no había ruta.
-            min_despues (float): minutos tras el cierre. inf si el par quedó sin ruta.
-            delta_min (float): min_despues - min_antes. NaN si alguno de los dos es inf.
-            sin_ruta (bool): True si tras el cierre no hay camino.
-        Además imprime cuántos pares se afectan, cuántos quedan sin ruta y el desvío medio y máximo.
-    """
-    ids = tiempos_antes.index.tolist()
-    filas = []
-    for origen in ids:
-        for destino in ids:
-            if origen == destino:
-                continue
-            antes = tiempos_antes.loc[origen, destino]
-            despues = tiempos_despues.loc[origen, destino]
-            sin_ruta = not np.isfinite(despues)
-            # Sin los dos tiempos finitos no hay un desvío que restar.
-            if sin_ruta or not np.isfinite(antes):
-                delta = np.nan
-            else:
-                delta = despues - antes
-            filas.append({
-                "origen": origen,
-                "destino": destino,
-                "min_antes": antes,
-                "min_despues": despues,
-                "delta_min": round(delta, 2) if np.isfinite(delta) else np.nan,
-                "sin_ruta": sin_ruta,
-            })
-    df = pd.DataFrame(filas)
-    con_delta = df["delta_min"].dropna()
-    # Afectado: se quedó sin ruta, o el nuevo camino tarda más de 0.01 min.
-    afectados = df[(df["sin_ruta"]) | (df["delta_min"] > 0.01)]
-    print(f"Pares afectados: {len(afectados)} de {len(df)}")
-    print(f"Pares sin ruta tras el cierre: {int(df['sin_ruta'].sum())}")
-    if len(con_delta):
-        print(f"Desvío medio: {con_delta.mean():.2f} min")
-        print(f"Desvío máximo: {con_delta.max():.2f} min")
-    return df
-
-
-def simular_cierre_calles(G, df_puntos, calles=None, n=3, df_uso=None, tiempos_antes=None, catalogo=None):
+def simular_cierre_calles(
+    G, df_puntos, calles=None, n_top=10, n_cerrar=3, seed=None, df_uso=None, tiempos_antes=None, catalogo=None
+):
     """Quita calles del grafo y recalcula las rutas entre los puntos.
 
     No modifica G: trabaja sobre una copia. Cierra la calle completa, es decir
@@ -550,8 +503,11 @@ def simular_cierre_calles(G, df_puntos, calles=None, n=3, df_uso=None, tiempos_a
         df_puntos (pandas.DataFrame): mismos puntos que usa uso_calles
             (columnas "Punto" y "nodo_osm").
         calles (list[str] | None): calle_id a cerrar, por ejemplo ["Main Street #1"].
-            Si es None, se cierran las n primeras filas de df_uso.
-        n (int): cuántas calles del ranking cerrar cuando calles es None. Por defecto 3.
+            Si es None, se toman las n_top más usadas de df_uso y se eligen
+            n_cerrar al azar entre esas.
+        n_top (int): cuántas calles del ranking forman el pool. Por defecto 10.
+        n_cerrar (int): cuántas de ese pool se cierran. Por defecto 3.
+        seed (int | None): semilla del sorteo. Si es None, cambia en cada corrida.
         df_uso (pandas.DataFrame | None): ranking que ya devolvió uso_calles.
             Si falta, junto con tiempos_antes o catalogo, se calcula aquí.
         tiempos_antes (pandas.DataFrame | None): matriz de minutos del grafo original.
@@ -559,8 +515,7 @@ def simular_cierre_calles(G, df_puntos, calles=None, n=3, df_uso=None, tiempos_a
             aristas que se borran.
 
     Retorna:
-        tuple[pandas.DataFrame, pandas.DataFrame, pandas.DataFrame]:
-            df_impacto: comparación por par. Ver _impacto_cierre.
+        tuple[pandas.DataFrame, pandas.DataFrame]:
             df_tiempos: matriz de minutos con las calles ya cerradas.
                 Mismo formato que matriz_tiempos: index y columnas = id de punto, valores en minutos.
             df_distancias: matriz de kilómetros con las calles ya cerradas.
@@ -570,7 +525,9 @@ def simular_cierre_calles(G, df_puntos, calles=None, n=3, df_uso=None, tiempos_a
     if df_uso is None or tiempos_antes is None or catalogo is None:
         df_uso, tiempos_antes, catalogo = uso_calles(G, df_puntos)
     if calles is None:
-        calles = df_uso["calle_id"].head(n).tolist()
+        candidatas = df_uso["calle_id"].head(n_top).tolist()
+        k = min(n_cerrar, len(candidatas))
+        calles = random.Random(seed).sample(candidatas, k=k)
 
     # La copia evita borrar aristas del grafo con el que se calculó el ranking.
     H = G.copy()
@@ -586,8 +543,7 @@ def simular_cierre_calles(G, df_puntos, calles=None, n=3, df_uso=None, tiempos_a
     # Mismas funciones del grafo abierto, ahora sobre el grafo sin esas calles.
     df_tiempos = matriz_tiempos(df_puntos, H)
     df_distancias = matriz_distancias(df_puntos, H)
-    df_impacto = _impacto_cierre(tiempos_antes, df_tiempos)
-    return df_impacto, df_tiempos, df_distancias
+    return  df_tiempos, df_distancias
 
 
 # Orden de ejecucion de las funciones:
@@ -613,11 +569,10 @@ df_matriz_distancias.to_csv("matriz_distancias_nxn.csv")
 df_uso, df_tiempos_antes, catalogo_calles = uso_calles(G, df_puntos)
 df_uso.to_csv("uso_calles.csv", index=False)
 
-# Cierre de las 3 calles con más usos y rutas alternativas
-df_impacto, df_tiempos_cierre, df_distancias_cierre = simular_cierre_calles(
-    G, df_puntos, n=3, df_uso=df_uso, tiempos_antes=df_tiempos_antes, catalogo=catalogo_calles
+# Cierre de 3 calles al azar entre las 10 más usadas
+df_tiempos_cierre, df_distancias_cierre = simular_cierre_calles(
+    G, df_puntos, df_uso=df_uso, tiempos_antes=df_tiempos_antes, catalogo=catalogo_calles
 )
-df_impacto.to_csv("impacto_cierre.csv", index=False)
 df_tiempos_cierre.to_csv("matriz_tiempos_cierre.csv")
 df_distancias_cierre.to_csv("matriz_distancias_cierre.csv")
 
