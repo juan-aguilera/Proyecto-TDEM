@@ -1,0 +1,149 @@
+calle_id,nombre,usos,pct,n_aristas,km,minutos,lat,lng
+East Lancaster Avenue #1,East Lancaster Avenue,475,32.05,40,7.74,1015.89,39.99809,-75.27252
+Montgomery Avenue #3,Montgomery Avenue,404,27.26,66,7.37,673.65,40.00879,-75.25104
+West Montgomery Avenue #1,West Montgomery Avenue,403,27.19,8,0.94,258.58,40.01049,-75.29201
+Conshohocken State Road #1,Conshohocken State Road,385,25.98,128,23.02,359.94,40.03144,-75.26453
+West Lancaster Avenue #2,West Lancaster Avenue,376,25.37,10,1.1,52.13,40.00923,-75.29371
+Montgomery Avenue #10,Montgomery Avenue,355,23.95,22,5.07,872.37,40.01845,-75.30592
+City Avenue #1,City Avenue,320,21.59,99,12.82,711.05,39.99342,-75.24254
+Anderson Avenue #1,Anderson Avenue,313,21.12,6,0.4,73.57,40.00872,-75.29063
+West Montgomery Avenue #2,West Montgomery Avenue,304,20.51,48,10.15,166.74,40.03852,-75.32967
+Belmont Avenue #1,Belmont Avenue,299,20.18,34,5.33,250.12,40.01533,-75.22725
+East Wynnewood Road #1,East Wynnewood Road,282,19.03,50,5.77,251.01,39.9987,-75.2628
+Old Gulph Road #1,Old Gulph Road,248,16.73,94,19.47,320.8,40.03517,-75.30367
+Old Lancaster Road #1,Old Lancaster Road,222,14.98,30,2.24,120.27,40.0005,-75.23863
+Ashland Avenue #1,Ashland Avenue,220,14.84,22,1.32,81.44,40.02555,-75.23632
+North Wynnewood Avenue #1,North Wynnewood Avenue,202,13.63,22,2.33,45.63,40.0081,-75.26987
+East Montgomery Avenue #1,East Montgomery Avenue,196,13.23,26,3.29,358.91,40.00985,-75.28228
+North Merion Avenue #1,North Merion Avenue,192,12.96,10,2.19,78.31,40.02495,-75.31725
+West Lancaster Avenue #1,West Lancaster Avenue,185,12.48,30,1.98,42.96,40.02252,-75.32047
+Argyle Road #1,Argyle Road,170,11.47,30,3.19,145.06,40.00035,-75.28613
+Haverford Avenue #1,Haverford Avenue,147,9.92,23,2.12,211.52,40.00624,-75.25926
+Mary Waters Ford Road #1,Mary Waters Ford Road,129,8.7,24,3.61,140.0,40.02534,-75.24168
+West Wynnewood Road #1,West Wynnewood Road,122,8.23,22,3.22,104.65,39.99987,-75.28397
+Morris Avenue #1,Morris Avenue,113,7.62,40,8.26,87.89,40.03376,-75.30798
+West Levering Mill Road #1,West Levering Mill Road,112,7.56,8,1.17,81.51,40.0125,-75.23918
+East Levering Mill Road #1,East Levering Mill Road,109,7.35,14,1.44,85.48,40.01478,-75.23208
+Righters Mill Road #2,Righters Mill Road,106,7.15,18,5.78,126.09,40.02193,-75.26146
+Fairview Avenue #9,Fairview Avenue,94,6.34,2,0.49,32.89,40.02662,-75.23583
+Highland Avenue #5,Highland Avenue,94,6.34,12,1.06,12.99,40.02719,-75.23727
+Levering Mill Road #1,Levering Mill Road,91,6.14,18,1.38,49.55,40.00841,-75.24265
+Mill Creek Road #3,Mill Creek Road,90,6.07,12,3.54,161.49,40.01593,-75.28804
+Meeting House Lane #1,Meeting House Lane,90,6.07,30,2.89,108.43,40.01061,-75.25055
+Hollow Road #1,Hollow Road,89,6.01,14,4.37,121.32,40.03859,-75.25503
+Jefferson Street #9,Jefferson Street,87,5.87,11,2.06,34.4,40.02691,-75.23436
+Wyndon Avenue #1,Wyndon Avenue,87,5.87,8,1.04,17.76,40.02808,-75.31941
+Llandrillo Road #1,Llandrillo Road,86,5.8,10,1.66,47.53,40.01095,-75.2292
+Ardmore Avenue #2,Ardmore Avenue,82,5.53,12,1.37,18.62,40.00726,-75.29612
+Hagys Ford Road #1,Hagys Ford Road,80,5.4,16,4.71,57.65,40.02607,-75.25913
+Windsor Avenue #2,Windsor Avenue,79,5.33,13,1.36,67.14,40.00648,-75.26241
+Righters Ferry Road #2,Righters Ferry Road,76,5.13,5,3.45,215.68,40.01367,-75.21994
+Woodcircle Drive #1,Woodcircle Drive,76,5.13,2,0.24,13.28,39.99058,-75.26217
+Athens Avenue #1,Athens Avenue,76,5.13,10,0.9,12.75,39.99845,-75.28747
+Thomas Avenue #1,Thomas Avenue,75,5.06,2,0.29,15.87,40.02343,-75.32398
+North Woodbine Avenue #1,North Woodbine Avenue,74,4.99,14,3.37,22.37,40.02268,-75.24834
+Wister Road #1,Wister Road,72,4.86,8,0.86,22.19,40.0111,-75.27779
+Braeburn Lane #1,Braeburn Lane,69,4.66,4,1.17,19.05,40.01444,-75.2605
+South Bryn Mawr Avenue #1,South Bryn Mawr Avenue,66,4.45,8,0.88,18.06,40.01999,-75.31906
+Old Lancaster Road #2,Old Lancaster Road,66,4.45,12,1.63,12.13,40.01996,-75.32064
+Schuylkill Expressway #1,Schuylkill Expressway,55,3.71,18,20.4,97.62,40.06186,-75.32612
+Black Rock Road #2,Black Rock Road,55,3.71,18,3.99,73.96,40.03501,-75.28914
+Williamson Road #1,Williamson Road,55,3.71,20,3.95,55.46,40.0324,-75.29088
+River Road #1,River Road,54,3.64,4,5.58,48.77,40.04791,-75.25988
+Parkview Road #2,Parkview Road,54,3.64,10,1.36,15.67,40.00016,-75.26544
+Price Street #1,Price Street,54,3.64,10,0.79,11.39,40.02736,-75.23521
+Righters Mill Road #1,Righters Mill Road,48,3.24,8,2.83,46.39,40.03483,-75.27728
+Bryn Mawr Avenue #2,Bryn Mawr Avenue,46,3.1,40,6.64,63.09,40.01401,-75.24854
+Mill Creek Road #2,Mill Creek Road,46,3.1,8,2.86,61.03,40.02744,-75.2737
+South Woodbine Avenue #1,South Woodbine Avenue,45,3.04,12,1.9,49.69,40.01264,-75.25553
+Woodside Road #2,Woodside Road,40,2.7,10,1.46,19.71,40.01195,-75.29408
+Parsons Avenue #1,Parsons Avenue,40,2.7,3,0.23,7.3,40.00633,-75.24377
+North Roberts Road #1,North Roberts Road,36,2.43,9,1.96,24.27,40.02703,-75.32094
+Woodbine Avenue #1,Woodbine Avenue,36,2.43,14,1.19,20.19,40.00947,-75.26028
+Owen Road #1,Owen Road,36,2.43,8,0.98,19.0,40.01013,-75.27808
+Manayunk Road #1,Manayunk Road,34,2.29,8,1.74,35.94,40.01536,-75.24434
+Iona Avenue #1,Iona Avenue,34,2.29,14,1.38,13.79,40.00789,-75.25824
+North Bryn Mawr Avenue #1,North Bryn Mawr Avenue,33,2.23,5,0.47,10.72,40.02139,-75.31648
+Old Belmont Avenue #1,Old Belmont Avenue,33,2.23,2,0.38,9.32,40.02426,-75.23023
+Grays Lane #1,Grays Lane,32,2.16,16,2.83,56.24,40.01802,-75.29406
+Saint Asaphs Road #1,Saint Asaphs Road,32,2.16,10,2.57,29.35,40.00633,-75.22116
+Hampden Avenue #2,Hampden Avenue,32,2.16,6,0.93,4.61,40.00848,-75.25938
+Bala Avenue #2,Bala Avenue,31,2.09,28,2.14,19.34,40.00778,-75.23788
+Remington Road #1,Remington Road,28,1.89,30,4.27,30.51,39.99197,-75.27265
+Clover Hill Road #1,Clover Hill Road,28,1.89,10,1.6,25.8,40.0001,-75.27169
+Greaves Lane #1,Greaves Lane,28,1.89,2,0.43,8.66,40.03329,-75.27398
+Penn Road #4,Penn Road,27,1.82,16,2.19,24.2,40.00754,-75.27396
+Monument Road #1,Monument Road,25,1.69,4,1.52,14.25,40.00995,-75.21606
+Haverford Road #1,Haverford Road,24,1.62,56,4.64,23.0,39.98703,-75.27742
+Mill Creek Road #4,Mill Creek Road,22,1.48,4,3.94,41.18,40.03991,-75.2619
+Price Avenue #1,Price Avenue,21,1.42,12,1.34,14.45,40.0101,-75.26356
+Narbrook Park #1,Narbrook Park,21,1.42,13,1.27,14.31,40.00729,-75.2663
+North Narberth Avenue #1,North Narberth Avenue,21,1.42,9,1.38,2.58,40.00823,-75.26105
+Narberth Avenue #2,Narberth Avenue,21,1.42,2,0.15,2.34,40.01185,-75.26231
+North Essex Avenue #1,North Essex Avenue,20,1.35,17,2.0,6.93,40.01025,-75.26477
+Gypsy Lane #2,Gypsy Lane,18,1.21,8,1.88,25.27,40.0163,-75.27432
+McClenaghan Mill Road #2,McClenaghan Mill Road,18,1.21,8,1.79,4.75,40.0195,-75.27312
+Ford Road #1,Ford Road,18,1.21,1,0.15,3.94,40.00598,-75.24342
+Morris Avenue #2,Morris Avenue,18,1.21,1,0.11,2.83,40.00132,-75.27519
+Merion Road #1,Merion Road,17,1.15,30,4.01,24.36,40.00059,-75.25002
+Schuylkill Expressway #2,Schuylkill Expressway,16,1.08,18,20.9,20.35,40.05792,-75.31412
+Kings Grant Drive #1,Kings Grant Drive,15,1.01,2,0.41,4.58,40.00583,-75.21899
+Airdale Road #1,Airdale Road,14,0.94,14,2.51,5.47,40.0304,-75.32295
+North Bowman Avenue #1,North Bowman Avenue,13,0.88,8,0.78,7.52,40.00304,-75.25229
+Rose Glen Road #1,Rose Glen Road,12,0.81,4,3.34,24.87,40.04087,-75.27161
+Church Road #10,Church Road,12,0.81,12,1.6,14.31,40.00601,-75.28412
+Winding Way #2,Winding Way,12,0.81,4,0.94,8.43,40.00528,-75.24874
+Winding Way #6,Winding Way,12,0.81,6,0.88,6.1,40.00883,-75.24677
+Youngs Ford Road #1,Youngs Ford Road,12,0.81,32,7.7,2.62,40.04338,-75.28042
+Rockland Avenue #1,Rockland Avenue,11,0.74,16,1.38,9.03,40.00225,-75.25865
+Baird Road #1,Baird Road,11,0.74,6,1.57,4.87,40.00083,-75.25425
+East Athens Avenue #1,East Athens Avenue,10,0.67,20,1.69,12.62,40.00371,-75.29053
+Aubrey Road #1,Aubrey Road,10,0.67,10,1.24,7.35,40.00596,-75.27467
+North Bowman Avenue #2,North Bowman Avenue,10,0.67,12,2.01,6.1,40.00639,-75.24619
+Summit Grove Avenue #1,Summit Grove Avenue,10,0.67,9,1.06,3.95,40.02144,-75.3204
+Lindsay Avenue #1,Lindsay Avenue,10,0.67,2,0.17,1.3,40.02037,-75.32082
+Chichester Lane #1,Chichester Lane,10,0.67,4,0.31,1.26,40.00816,-75.27649
+Wister Road #3,Wister Road,10,0.67,4,0.62,1.01,40.00869,-75.27576
+Cricket Avenue #2,Cricket Avenue,10,0.67,11,1.49,0.62,40.00628,-75.29393
+Sabine Avenue #1,Sabine Avenue,9,0.61,15,1.27,9.15,40.01045,-75.26696
+Righters Ferry Road #1,Righters Ferry Road,9,0.61,6,1.2,8.07,40.00717,-75.22761
+South Sabine Avenue #1,South Sabine Avenue,9,0.61,6,0.69,4.66,40.00841,-75.27216
+Floyd Terrace #1,Floyd Terrace,9,0.61,2,0.24,1.55,40.02438,-75.32369
+Sycamore Avenue #2,Sycamore Avenue,8,0.54,22,1.76,7.83,40.00264,-75.24649
+West Athens Avenue #1,West Athens Avenue,8,0.54,1,0.19,2.2,40.00763,-75.29329
+Spring House Lane #2,Spring House Lane,8,0.54,2,0.28,1.68,40.01321,-75.24531
+Derwen Road #2,Derwen Road,8,0.54,8,0.89,1.61,40.01068,-75.24514
+Hamilton Road #1,Hamilton Road,8,0.54,18,1.95,1.46,40.01424,-75.24762
+Standish Road #1,Standish Road,8,0.54,8,0.85,1.26,40.01436,-75.24664
+Winding Way #5,Winding Way,8,0.54,6,0.8,0.96,40.0135,-75.24608
+North Highland Avenue #1,North Highland Avenue,7,0.47,26,3.55,7.46,40.00213,-75.23888
+Arlington Road #2,Arlington Road,7,0.47,2,0.69,3.5,40.01413,-75.2588
+Broadacres Road #1,Broadacres Road,7,0.47,8,1.82,1.59,40.01576,-75.25853
+Bala Avenue #1,Bala Avenue,7,0.47,16,1.55,1.4,40.00341,-75.23113
+Brookhurst Avenue #1,Brookhurst Avenue,7,0.47,10,0.94,0.61,40.0126,-75.25734
+Union Avenue #1,Union Avenue,6,0.4,14,1.9,5.87,40.00214,-75.2331
+David Road #2,David Road,5,0.34,2,0.48,1.73,40.0107,-75.22725
+Clwyd Road #1,Clwyd Road,5,0.34,12,2.25,1.22,40.00807,-75.22828
+Cherry Lane #2,Cherry Lane,4,0.27,12,2.55,5.64,40.01439,-75.27942
+East Dartmouth Road #1,East Dartmouth Road,4,0.27,24,1.4,4.13,40.01735,-75.23543
+Loves Lane #1,Loves Lane,4,0.27,6,0.63,1.8,40.01276,-75.27834
+Sussex Road #2,Sussex Road,4,0.27,4,0.4,1.16,39.99898,-75.2866
+Academy Circle #1,Academy Circle,4,0.27,2,0.33,0.97,40.00795,-75.24608
+Overhill Road #2,Overhill Road,4,0.27,14,1.38,0.86,40.01641,-75.23389
+Morton Road #1,Morton Road,3,0.2,4,0.35,0.29,40.02261,-75.31914
+Rock Hill Road #1,Rock Hill Road,2,0.13,2,1.93,2.06,40.02004,-75.23557
+South Bowman Avenue #1,South Bowman Avenue,2,0.13,14,1.32,1.96,39.99959,-75.25817
+Upland Terrace #1,Upland Terrace,2,0.13,8,0.98,1.41,40.00005,-75.23541
+Bowman Avenue #1,Bowman Avenue,2,0.13,4,0.88,0.83,39.99625,-75.26329
+Dudley Avenue #1,Dudley Avenue,2,0.13,9,1.68,0.59,40.00867,-75.26489
+School Lane #10,School Lane,2,0.13,2,0.37,0.53,40.007,-75.29461
+Bryn Mawr Avenue #1,Bryn Mawr Avenue,2,0.13,18,1.66,0.22,40.00223,-75.23334
+Wynnedale Road #1,Wynnedale Road,2,0.13,4,0.69,0.03,40.01211,-75.26814
+Montrose Avenue #1,Montrose Avenue,1,0.07,6,0.79,0.59,40.02686,-75.32692
+Decker Boulevard #1,Decker Boulevard,1,0.07,3,0.36,0.32,40.0071,-75.21649
+Cynwyd Road #2,Cynwyd Road,1,0.07,2,0.2,0.28,40.00412,-75.2327
+Cynwyd Road #4,Cynwyd Road,1,0.07,3,0.24,0.25,40.00395,-75.23119
+Norwood Avenue #2,Norwood Avenue,1,0.07,2,0.33,0.24,40.027,-75.32685
+East Lancaster Avenue #2,East Lancaster Avenue,1,0.07,12,0.79,0.21,40.0254,-75.32634
+Rees Avenue #1,Rees Avenue,1,0.07,2,0.28,0.2,40.02348,-75.32496
+South Roberts Road #1,South Roberts Road,1,0.07,2,0.18,0.13,40.02428,-75.32498
