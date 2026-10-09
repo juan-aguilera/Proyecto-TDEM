@@ -41,7 +41,11 @@ def verificar_grafo(G):
     return G
 
 
-EXCEL_ANALISIS = Path(__file__).resolve().parent / "analisis.xlsx"
+EXCEL_ANALISIS = (
+    Path(__file__).resolve().parent.parent
+    / "02 OPTIMIZACION VRP"
+    / "puntos_vrp.xlsx"
+)
 def leer_analisis(
     ruta: Path | str = EXCEL_ANALISIS,
     hoja: str | int = 0,
@@ -556,7 +560,7 @@ df_puntos = leer_analisis()
 
 # Asociar cada punto a su nodo más cercano en el grafo
 df_puntos = puntos_cercanos_grafo(df_puntos, G)
-"""
+
 # Matriz de tiempos entre todos los puntos. La matriz se guarda en el archivo matriz_tiempos_nxn.csv
 df_matriz_tiempos = matriz_tiempos(df_puntos, G)
 df_matriz_tiempos.to_csv("matriz_tiempos_nxn.csv")
@@ -576,7 +580,7 @@ df_tiempos_cierre, df_distancias_cierre = simular_cierre_calles(
 df_tiempos_cierre.to_csv("matriz_tiempos_cierre.csv")
 df_distancias_cierre.to_csv("matriz_distancias_cierre.csv")
 
-"""
+
 # Dibujar las rutas en el mapa. La ruta se guarda en el archivo mapa_rutas.html. Se dibuja la ruta desde un origen (ej: P37, que es un hospital) hasta todos los otros puntos.
 m = mapa_rutas(G, df_puntos, df_matriz_tiempos, origen="P37")
 m.save("mapa_rutas.html")
