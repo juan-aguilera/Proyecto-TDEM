@@ -9,5 +9,6 @@ osmnx
 networkx
 folium
 scikit-learn
+scipy
 pathlib
 folium
