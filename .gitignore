@@ -2,6 +2,9 @@
 tdem/
 NO-SUBIR/
 ARCHIVADO/
+__pycache__/
+cache/
+
 # archivos de pruebas
 pruebas osmnx.pyS
 *.docx
