@@ -31,7 +31,7 @@ limkits  = 36
 N_SIM = 30
 CV    = 0.05
  
-# 30 matrices de distancia, misma semilla del notebook
+# 30 matrices de distancia
 mu = distancias_km.values.astype(float)
 n  = mu.shape[0]
 iu = np.triu_indices(n, k=1)
@@ -46,7 +46,7 @@ for s in range(N_SIM):
     distancias_sim.append(pd.DataFrame(sim, index=distancias_km.index, columns=distancias_km.columns))
  
  
-# funciones del notebook, misma logica
+# funciones del notebook
 def rta_asig(rutas_optmizadas_2, rta_rutas_optmizadas_2):
     filas = []
     for i in range(len(rutas_optmizadas_2)):
@@ -203,7 +203,7 @@ for s in range(N_SIM):
  
     distancias_km_actual = distancias_sim[s]
  
-    # asigno cada cliente al hospital mas cercano
+    # asigno cada cliente al hospital mas cercano en terminos de tiempo. Se le suma la desviacion estandar de 10% en cada iteracion 
     tiempos_sim = tiempos.loc[:, ['H1', 'H2', 'H3']] * (1 + rng.normal(0, 0.10, (len(tiempos), 3)))
  
     tabdistan = tiempos_sim.loc[:, ['H1', 'H2', 'H3']].copy()
